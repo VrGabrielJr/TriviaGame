@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia Game</title>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .container{
+            height: 500px;
+            background-color: blue;
+        }
+
+        #startBtn {
+            height: 100px;
+            width: 150px;
+            font-size: 50px;
+            color: yellow;
+        }
+        #Title {
+            text-align: center;
+        }
+
+        #timer {
+            text-align: center;
+            color: yellow;
+        }
+
+        #question {
+            text-align: center;
+            font-size: 20px;
+            color: yellow;
+        }
+
+        #submitBtn,
+        #resultPage,
+        #QuizBox {
+            display: none;
+        }
+
+        #resultPage {
+            color: Yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="QuizBox">
+            <div id="Title"></div>
+            <div id="timer"></div>
+            <div id="Quiz"></div>
+            <div id="submitBtn"></div>
+        </div>
+        <button id="startBtn" type="button" class="btn btn-primary btn-lg">Start</button>
+        <div id="resultPage">
+            <div id="resultTitle"></div>
+            <div id="correct"></div>
+            <div id="incorrect"></div>
+            <div id="unAnswered"></div>
+        </div>
+    </div>
+
+<script>
+
+    // Timer Functions
+    function Timer() {
+        count--;
+        if (count === 0) {
+        TimerStop();
+        $("#QuizBox").hide();
+        $("#resultPage").show();
+        ScoreCheck(); 
+        }
+        $("#timer").html("<h2> Time Remaining: " + count + "</h2>");
+    }
+
+    function TimerStop() {
+        clearInterval(intervalId);
+    }
+    //End Timer Functions
+
+
+    //Display Questions with Options
+    function DisplayQuestions() {
+        for (var i = 0; i < Questions.length; i++) {
+            $("#Quiz").append(Questions[i].question + "<br>");
+            
+            for (var j = 0; j < Questions[i].options.length; j++) {
+                $("#Quiz").append("<label class= radio-inline><input value='" + j + "' type='radio' name='" + i + "'>" + Questions[i].options[j] + "</label><br><br>");
+            }
+        }
+    }
+
+    // Check Questions and Answers function
+    function ScoreCheck() {
+
+        DisplayResults();
+    }
+
+    function DisplayResults () {
+        $("#resultTitle").append("Here Are Your Results!");
+        $("#correct").append("Correct Answers: " + correct);
+        $("#incorrect").append("Incorrect Answers: " + incorrect);
+        $("#unAnswered").append("Questions Left Blank: " + unAnswered);
+        console.log(usersChoice[0]);
+    }
+
+    
+
+    $( document ).ready(function() {
+        
+        //In Game Start Button
+        $("#startBtn").click(function(){
+        $("#Title").html("<h1>Trivia Game</h2>");
+        $("#submitBtn").html("<button> Submit </button");
+        $("#QuizBox").show();
+        $("#submitBtn").show();
+        $("#startBtn").hide();
+        DisplayQuestions();
+        Timer();
+        });
+
+        // In Game Submit Button
+        $("#submitBtn").click(function() {
+            TimerStop();
+            $("#QuizBox").hide();
+            $("#resultPage").show();
+            ScoreCheck();
+        });
+
+        $("input").click(function () {
+            
+        });
+
+    });
+
+    var correct = 0;
+    var incorrect = 0;
+    var unAnswered = 0;
+    var usersChoice = [];
+    var count = 5;
+    var intervalId = setInterval(Timer, 1000);
+
+    var Questions = [{
+        question: "What is the name of the Simpson's next door neighbor?",
+        options: ["Ned Flanders", "Nelson Muntz", "Milhouse Van Houten", "Ralph Wiggum"],
+        answer: 0
+    } , 
+    {
+        question: "What did Homer buy Marge for her 34th birthday?",
+        options: ["Flowers", "Donuts", "Bowling Ball", "Cake"],
+        answer: 2
+    } ,
+    {
+        question: "What did homer smuggle on board the space shuttle?",
+        options: ["Donuts", "Potato Chips", "Pizza", "Duff Beer"],
+        answer: 1
+    } ,
+    {
+        question: "What game can't Lisa play because she is too sad?",
+        options: ["Basket-Ball", "Baseball", "Football", "Dodgeball"],
+        answer: 3 
+    }];
+
+
+
+    
+
+    
+
+</script>
+
+</body>
+</html>
