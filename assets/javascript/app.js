@@ -8,30 +8,6 @@ var an2;
 var an3;
 var an4;
 
-$("#Quiz").append("<h2> What is the name of the Simpson's next door neighbor? </h2>");
-$("#Quiz").append("<label class= radio-inline><input value= 'answer1' name='q1' type='radio' id='ned_flanders'>Ned Flanders</label><br><br>");
-$("#Quiz").append("<label class= radio-inline><input value= 'wrong' name='q1' type='radio' id='nelson'>Nelson Muntz</label><br><br>");
-$("#Quiz").append("<label class= radio-inline><input value= 'wrong' name='q1' type='radio' id='millhouse'>Milhouse Van Houten</label><br><br>");
-$("#Quiz").append("<label class= radio-inline><input value= 'wrong' name='q1' type='radio' id='ralph'>Ralph Wiggum</label><br><br>");
-
-$("#Quiz").append("<h2> What did Homer buy Marge for her 34th birthday? </h2>");
-$("#Quiz").append("<label class= radio-inline><input value= 'wrong' name='q2' type='radio' id='flowers'>Flowers</label><br><br>");
-$("#Quiz").append("<label class= radio-inline><input value= 'wrong' name='q2' type='radio' id='donuts'>Donuts</label><br><br>");
-$("#Quiz").append("<label class= radio-inline><input value= 'answer2' name='q2' type='radio' id='bowling'>Bowling Ball</label><br><br>");
-$("#Quiz").append("<label class= radio-inline><input value= 'wrong' name='q2' type='radio' id='cake'>Cake</label><br><br>");
-
-$("#Quiz").append("<h2> What did homer smuggle on board the space shuttle? </h2>");
-$("#Quiz").append("<label class= radio-inline><input value= 'wrong' name='q3' type='radio' id='donutsQ3'>Donuts</label><br><br>");
-$("#Quiz").append("<label class= radio-inline><input value= 'answer3' name='q3' type='radio' id='chips'>Potato Chips</label><br><br>");
-$("#Quiz").append("<label class= radio-inline><input value= 'wrong' name='q3' type='radio' id='pizza'>Pizza</label><br><br>");
-$("#Quiz").append("<label class= radio-inline><input value= 'wrong' name='q3' type='radio' id='duff'>Duff Beer</label><br><br>");
-
-$("#Quiz").append("<h2> What game can't Lisa play because she is too sad? </h2>");
-$("#Quiz").append("<label class= radio-inline><input value= 'wrong' name='q4' type='radio' id='basketball'>Basket Ball</label><br><br>");
-$("#Quiz").append("<label class= radio-inline><input value= 'wrong' name='q4' type='radio' id='baseball'>Baseball</label><br><br>");
-$("#Quiz").append("<label class= radio-inline><input value= 'wrong' name='q4' type='radio' id='football'>Football</label><br><br>");
-$("#Quiz").append("<label class= radio-inline><input value= 'answer4' name='q4'type='radio' id='dodgeball'>Dodgeball</label><br><br>");
-    
 // Timer Functions
 function Timer() {
     count--;
@@ -115,6 +91,7 @@ $( document ).ready(function() {
     $("#QuizBox").show();
     $("#submitBtn").show();
     $("#startBtn").hide();
+
     $("#Quiz").append("<h2> What is the name of the Simpson's next door neighbor? </h2>");
     $("#Quiz").append("<label class= radio-inline><input value= 'answer1' name='q1' type='radio' id='ned_flanders'>Ned Flanders</label><br><br>");
     $("#Quiz").append("<label class= radio-inline><input value= 'wrong' name='q1' type='radio' id='nelson'>Nelson Muntz</label><br><br>");
