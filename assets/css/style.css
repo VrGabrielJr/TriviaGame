@@ -1,0 +1,49 @@
+body {
+    background-color: black;
+    color: yellow;
+}
+
+#QuizBox,
+#resultPage {
+    background-color: rgb(95, 95, 255);
+    margin: 0 auto;
+    padding: 40px;
+    text-align: left;
+    width: 600px;
+}
+
+#startBtn {
+    height: 100px;
+    width: 150px;
+    font-size: 50px;
+    color: yellow;
+    margin: -20px -50px; 
+    position:relative;
+    top:50%; 
+    left:50%;
+}
+
+#Title {
+    text-align: center;
+}
+
+#timer {
+    text-align: center;
+    color: yellow;
+}
+
+#question {
+    text-align: center;
+    font-size: 20px;
+    color: yellow;
+}
+
+#submitBtn,
+#resultPage,
+#QuizBox {
+    display: none;
+}
+
+#resultPage {
+    color: Yellow;
+}
